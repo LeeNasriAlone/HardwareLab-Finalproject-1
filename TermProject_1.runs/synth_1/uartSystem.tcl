@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -89,7 +88,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
+  D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/Binary2BCD.v
   D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/baudrate_gen.v
+  D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/calculator.v
   D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/clockDiv.v
   D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/hexTo7Segment.v
   D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/input_state.v

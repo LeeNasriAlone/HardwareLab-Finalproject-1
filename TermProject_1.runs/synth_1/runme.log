@@ -10,6 +10,7 @@
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
 source uartSystem.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1085.234 ; gain = 0.000
 Command: synth_design -top uartSystem -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
@@ -17,16 +18,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 5512
+INFO: [Synth 8-7075] Helper process launched with PID 8792
 WARNING: [Synth 8-2611] redeclaration of ansi port clkDiv is not allowed [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/clockDiv.v:28]
 WARNING: [Synth 8-2611] redeclaration of ansi port segments is not allowed [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/hexTo7Segment.v:15]
 WARNING: [Synth 8-2611] redeclaration of ansi port success is not allowed [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/receiver.v:9]
-WARNING: [Synth 8-6901] identifier 'thous' is used before its declaration [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:51]
-WARNING: [Synth 8-6901] identifier 'huns' is used before its declaration [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:52]
-WARNING: [Synth 8-6901] identifier 'tens' is used before its declaration [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:53]
-WARNING: [Synth 8-6901] identifier 'ones' is used before its declaration [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:54]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1113.113 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:21 . Memory (MB): peak = 1085.234 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'uartSystem' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:23]
 INFO: [Synth 8-6157] synthesizing module 'clockDiv' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/clockDiv.v:23]
@@ -39,38 +36,38 @@ WARNING: [Synth 8-567] referenced signal 'num1' should be on the sensitivity lis
 WARNING: [Synth 8-567] referenced signal 'num2' should be on the sensitivity list [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/quadSevenSeg.v:69]
 WARNING: [Synth 8-567] referenced signal 'num3' should be on the sensitivity list [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/quadSevenSeg.v:69]
 INFO: [Synth 8-6155] done synthesizing module 'quadSevenSeg' (3#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/quadSevenSeg.v:23]
-WARNING: [Synth 8-689] width (8) of port connection 'num0' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:56]
-WARNING: [Synth 8-689] width (8) of port connection 'num1' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:56]
-WARNING: [Synth 8-689] width (8) of port connection 'num2' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:56]
-WARNING: [Synth 8-689] width (8) of port connection 'num3' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:56]
+WARNING: [Synth 8-689] width (8) of port connection 'num0' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:80]
+WARNING: [Synth 8-689] width (8) of port connection 'num1' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:80]
+WARNING: [Synth 8-689] width (8) of port connection 'num2' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:80]
+WARNING: [Synth 8-689] width (8) of port connection 'num3' does not match port width (4) of module 'quadSevenSeg' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:80]
 INFO: [Synth 8-6157] synthesizing module 'baudrate_gen' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/baudrate_gen.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'baudrate_gen' (4#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/baudrate_gen.v:1]
-INFO: [Synth 8-6157] synthesizing module 'receiver' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/receiver.v:1]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/receiver.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'receiver' (5#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/receiver.v:1]
 INFO: [Synth 8-6157] synthesizing module 'transmitter' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/transmitter.v:1]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/transmitter.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'transmitter' (6#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/transmitter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'transmitter' (5#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/transmitter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'receiver' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/receiver.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/receiver.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'receiver' (6#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/receiver.v:1]
 INFO: [Synth 8-6157] synthesizing module 'input_state' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/input_state.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'input_state' (7#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/input_state.v:23]
-WARNING: [Synth 8-689] width (5) of port connection 'thous' does not match port width (4) of module 'input_state' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:90]
-WARNING: [Synth 8-689] width (5) of port connection 'huns' does not match port width (4) of module 'input_state' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:90]
-WARNING: [Synth 8-689] width (5) of port connection 'tens' does not match port width (4) of module 'input_state' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:90]
-WARNING: [Synth 8-689] width (5) of port connection 'ones' does not match port width (4) of module 'input_state' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:90]
-INFO: [Synth 8-6155] done synthesizing module 'uartSystem' (8#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'calculator' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/calculator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'calculator' (8#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/calculator.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Binary2BCD' [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/Binary2BCD.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Binary2BCD' (9#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/Binary2BCD.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'uartSystem' (10#1) [D:/Vivado/Workspace/TermProject_1/TermProject_1.srcs/sources_1/new/uartSystem.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1116.699 ; gain = 3.586
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:54 . Memory (MB): peak = 1122.367 ; gain = 37.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1116.699 ; gain = 3.586
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:59 . Memory (MB): peak = 1122.367 ; gain = 37.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1116.699 ; gain = 3.586
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:59 . Memory (MB): peak = 1122.367 ; gain = 37.133
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1116.699 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1122.367 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -81,29 +78,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/uartSystem_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1237.578 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1247.477 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1237.578 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 1247.477 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1237.578 ; gain = 124.465
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:01:30 . Memory (MB): peak = 1247.477 ; gain = 162.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1237.578 ; gain = 124.465
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:01:30 . Memory (MB): peak = 1247.477 ; gain = 162.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1237.578 ; gain = 124.465
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:01:30 . Memory (MB): peak = 1247.477 ; gain = 162.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1237.578 ; gain = 124.465
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:01:32 . Memory (MB): peak = 1247.477 ; gain = 162.242
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'divTarget' (clockDiv) to 'genblk1[18].div'
 ---------------------------------------------------------------------------------
@@ -112,25 +109,36 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   32 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 1     
+	   3 Input   14 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 33    
+	   2 Input    3 Bit       Adders := 1     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
+	               14 Bit    Registers := 1     
 	                8 Bit    Registers := 5     
-	                4 Bit    Registers := 5     
-	                2 Bit    Registers := 2     
+	                4 Bit    Registers := 14    
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 36    
 +---Muxes : 
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 1     
 	  10 Input    8 Bit        Muxes := 1     
 	  15 Input    8 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 1     
-	   3 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 6     
+	   2 Input    4 Bit        Muxes := 38    
+	   8 Input    4 Bit        Muxes := 1     
+	  14 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 54    
 	  10 Input    1 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 3     
+	   7 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 4     
 	   4 Input    1 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 1     
-	  11 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 1     
+	  15 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -146,26 +154,43 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+DSP Report: Generating DSP cal/result0, operation Mode is: A*B.
+DSP Report: operator cal/result0 is absorbed into DSP cal/result0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1237.578 ; gain = 124.465
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:01:46 . Memory (MB): peak = 1247.477 ; gain = 162.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|calculator  | A*B         | 14     | 14     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1237.578 ; gain = 124.465
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:02:05 . Memory (MB): peak = 1263.602 ; gain = 178.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1237.578 ; gain = 124.465
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:02:09 . Memory (MB): peak = 1325.594 ; gain = 240.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:02:09 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -183,37 +208,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -226,41 +251,42 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    16|
-|3     |LUT1   |    26|
-|4     |LUT2   |    15|
-|5     |LUT3   |    10|
-|6     |LUT4   |    19|
-|7     |LUT5   |    17|
-|8     |LUT6   |    23|
-|9     |FDRE   |   121|
-|10    |IBUF   |     2|
-|11    |OBUF   |    13|
-+------+-------+------+
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     3|
+|2     |CARRY4  |   112|
+|3     |DSP48E1 |     1|
+|4     |LUT1    |    63|
+|5     |LUT2    |   101|
+|6     |LUT3    |   195|
+|7     |LUT4    |    62|
+|8     |LUT5    |    33|
+|9     |LUT6    |   104|
+|10    |FDRE    |   185|
+|11    |IBUF    |     2|
+|12    |OBUF    |    13|
++------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1238.465 ; gain = 4.473
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1238.465 ; gain = 125.352
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:01:52 . Memory (MB): peak = 1343.648 ; gain = 133.305
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:02:15 . Memory (MB): peak = 1343.648 ; gain = 258.414
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1247.313 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1349.480 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 113 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1247.313 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1349.480 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 19 Warnings, 0 Critical Warnings and 0 Errors encountered.
+38 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:50 . Memory (MB): peak = 1247.313 ; gain = 134.199
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:03:00 . Memory (MB): peak = 1349.480 ; gain = 264.246
 INFO: [Common 17-1381] The checkpoint 'D:/Vivado/Workspace/TermProject_1/TermProject_1.runs/synth_1/uartSystem.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file uartSystem_utilization_synth.rpt -pb uartSystem_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Dec 13 18:58:50 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 15 13:21:32 2020...

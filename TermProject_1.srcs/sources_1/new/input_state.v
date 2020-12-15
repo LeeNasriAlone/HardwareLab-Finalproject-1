@@ -21,9 +21,13 @@
 
 
 module input_state(
-    output [13:0]binary_A,
-    output [13:0]binary_B,
-    output reg ready_to_calculate,
+    output reg [3:0]thous,
+    output reg [3:0]huns,
+    output reg [3:0]tens,
+    output reg [3:0]ones,
+    output wire [13:0]binary_A,
+    output wire [13:0]binary_B,
+    output reg [3:0]state,
     input [3:0]data_in,
     input success,
     input reset
@@ -38,15 +42,12 @@ module input_state(
     reg [3:0]huns_B;
     reg [3:0]tens_B;
     reg [3:0]ones_B;
-    reg [3:0]state ;
-    reg ready_to_calculate;
     
-    BCD2Binary bi_A(Thous_A, huns_A, tens_A, ones_A, binary_A);
-    BCD2Binary bi_B(Thous_B, huns_B, tens_B, ones_B, binary_B);
+    assign binary_A = (thous_A * 10'd1000) + (huns_A*7'd100) + (tens_A*4'd10) + ones_A;
+    assign binary_B = (thous_B * 10'd1000) + (huns_B*7'd100) + (tens_B*4'd10) + ones_B;
     
     initial begin
         state = 0;
-        ready_to_calculate = 0;
     end
     
     always @(negedge success)
@@ -58,14 +59,14 @@ module input_state(
             opcode  = 4'b0000;
         end
         
-        else if (state == 0) begin thous_A = data_in; state = 1; end
-        else if (state == 1) begin  huns_A = data_in; state = 2; end
-        else if (state == 2) begin  tens_A = data_in; state = 3; end
-        else if (state == 3) begin  ones_A = data_in; state = 4; end
-        else if (state == 4) begin thous_B = data_in; state = 5; end
-        else if (state == 5) begin  huns_B = data_in; state = 6; end
-        else if (state == 6) begin  tens_B = data_in; state = 7; end
-        else if (state == 7) begin  ones_B = data_in; state = 8; end
+        else if (state == 0) begin thous_A = data_in; thous =  data_in ; state = 1; end
+        else if (state == 1) begin  huns_A = data_in;  huns =  data_in ; state = 2; end
+        else if (state == 2) begin  tens_A = data_in;  tens =  data_in ; state = 3; end
+        else if (state == 3) begin  ones_A = data_in;  ones =  data_in ; state = 4; end
+        else if (state == 4) begin thous_B = data_in; thous =  data_in ; state = 5; end
+        else if (state == 5) begin  huns_B = data_in;  huns =  data_in ; state = 6; end
+        else if (state == 6) begin  tens_B = data_in;  tens =  data_in ; state = 7; end
+        else if (state == 7) begin  ones_B = data_in;  ones =  data_in ; state = 8; end
         else if (state == 8) begin  opcode = data_in; state = 0; end
         else begin 
             state = 0;
@@ -73,9 +74,10 @@ module input_state(
             thous_B = 4'b0000; huns_B  = 4'b0000; tens_B  = 4'b0000; ones_B  = 4'b0000;
             opcode  = 4'b0000;
         end
-        
-        if (state == 8 ) begin ready_to_calculate = 1; end
-        else ready_to_calculate = 0;
    end
+   
+   
+   
+   // state for push receive data to each BCD digit
 
 endmodule

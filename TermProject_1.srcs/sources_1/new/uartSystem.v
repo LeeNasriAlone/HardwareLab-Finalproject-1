@@ -28,7 +28,12 @@ module uartSystem(
     input RsRx,
     output RsTx
     );
+    
+    
+    
     reg reset = 0;
+    
+    
     // for 7 segment -- START
     wire targetClk;
     wire [25:0] tclk;
@@ -48,47 +53,65 @@ module uartSystem(
     
     clockDiv divTarget(targetClk, tclk[18]);
     
-    assign num3 = BCD_result[15:12];
-    assign num2 = BCD_result[11:8];
-    assign num1 = BCD_result[7:4];
-    assign num0 = BCD_result[3:0];
+    reg [3:0] before_num3; reg [3:0] before_num2;
+    reg [3:0] before_num1; reg [3:0] before_num0;
+    wire[3:0] thous; wire[3:0] huns; wire[3:0] tens; wire[3:0] ones;
+    wire[3:0] state; wire [15:0] BCD_result;
+    always @(posedge clk) begin
+        if (state == 0) begin
+            before_num3 = BCD_result[15:12];
+            before_num2 = BCD_result[11:8];
+            before_num1 = BCD_result[7:4];
+            before_num0 = BCD_result[3:0];
+        end
+        else begin
+            before_num3 = thous;
+            before_num2 = huns;
+            before_num1 = tens;
+            before_num0 = ones;
+        end
+    end
+    
+    assign num3 = before_num3;
+    assign num2 = before_num2;
+    assign num1 = before_num1;
+    assign num0 = before_num0;
     
     quadSevenSeg QuadSevenSeg(seg,dp,an[0],an[1],an[2],an[3],num0,num1,num2,num3,targetClk);
     // for 7 segment -- END
     
-    reg [7:0]K_0 = 8'h30; 
-    reg [7:0]K_1 = 8'h31;            
-    reg [7:0]K_2 = 8'h32;         
-    reg [7:0]K_3 = 8'h33;        
-    reg [7:0]K_4 = 8'h34;       
-    reg [7:0]K_5 = 8'h35; 
-    reg [7:0]K_6 = 8'h36;            
-    reg [7:0]K_7 = 8'h37;         
-    reg [7:0]K_8 = 8'h38;        
-    reg [7:0]K_9 = 8'h39;    
-        
-    reg [7:0]K_PLUS  = 8'h2B;     // +    
-    reg [7:0]K_MINUS = 8'h2D;     // - 
-    reg [7:0]K_MUL   = 8'h2A;     // *     
-    reg [7:0]K_DIV   = 8'h2F;     // /   
     
     reg ena, last_rec;
     reg [7:0] data_in;
     reg [3:0] binary_in;
     wire [7:0] data_out;
-    wire sent, received, baud;
-    wire success, ready_to_calculate;
+    wire sent, received, baud, success;
     wire [13:0] binary_A; wire [13:0] binary_B; wire [13:0] binary_result;
-    wire [15:0] BCD_result;
+    reg [13:0] binary_A_2; reg [13:0] binary_B_2;
+    
+    //always @(posedge clk) begin
+    //    binary_A_2 = binary_A;
+    //    binary_B_2 = binary_B;
+    //end
     
     baudrate_gen baudrate_gen(clk, baud);
     transmitter transmitter(baud, data_in, ena, sent, RsTx);
     // flow part
+    // 1.
     receiver receiver(baud, RsRx, success, received, data_out);
-    input_state input_state(binary_A, binary_B, ready_to_calculate, binary_in, success, reset);
-    calculator cal(binary_A, binary_B, ready_to_calculate, clk, binary_result);
+    // 2.
+    input_state input_state(thous, huns, tens, ones, binary_A, binary_B, state, binary_in, success, reset);
+    // 3.
+    calculator cal(binary_A, binary_B, binary_in , clk, binary_result);
+    // 4.
     Binary2BCD BCD(binary_result, BCD_result);
 
+
+
+    reg [7:0]K_0 = 8'h30; reg [7:0]K_1 = 8'h31; reg [7:0]K_2 = 8'h32; reg [7:0]K_3 = 8'h33;        
+    reg [7:0]K_4 = 8'h34; reg [7:0]K_5 = 8'h35; reg [7:0]K_6 = 8'h36; reg [7:0]K_7 = 8'h37;         
+    reg [7:0]K_8 = 8'h38; reg [7:0]K_9 = 8'h39; reg [7:0]K_PLUS  = 8'h2B; 
+    reg [7:0]K_MINUS = 8'h2D; reg [7:0]K_MUL = 8'h2A; reg [7:0]K_DIV   = 8'h2F;
     always @(posedge baud)
     begin
         if (ena == 1) ena = 0;

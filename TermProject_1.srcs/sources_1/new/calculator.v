@@ -23,7 +23,7 @@
 module calculator(
     input [13:0] A,
     input [13:0] B,
-    input [4:0]opcode,
+    input [4:0] opcode,
     input clk,
     output reg [13:0] result
     );
