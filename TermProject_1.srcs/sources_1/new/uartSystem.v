@@ -24,22 +24,21 @@ module uartSystem(
     output [6:0] seg,
     output dp,
     output [3:0] an,
+    output [15:0] led,
     input clk,
+    input btnU,
     input RsRx,
     output RsTx
     );
-    
-    
-    
-    reg reset = 0;
-    
+    wire BTNU;
+    singlePulser btnu(BTNU, btnU, clk); 
+       
     
     // for 7 segment -- START
     wire targetClk;
     wire [25:0] tclk;
     wire [7:0] num0,num1,num2,num3;
     wire an0,an1,an2,an3;
-    wire [7:0] sw2, SW;
 
     assign an = {an0,an1,an2,an3};
     
@@ -54,24 +53,31 @@ module uartSystem(
     clockDiv divTarget(targetClk, tclk[18]);
     
     reg [3:0] before_num3; reg [3:0] before_num2;
-    reg [3:0] before_num1; reg [3:0] before_num0;
+    reg [3:0] before_num1; reg [3:0] before_num0; reg before_sign; wire final_sign;
+    wire sign_input; wire sign_result ; wire overflow;
     wire[3:0] thous; wire[3:0] huns; wire[3:0] tens; wire[3:0] ones;
     wire[3:0] state; wire [15:0] BCD_result;
+    
+    
     always @(posedge clk) begin
         if (state == 0) begin
+            before_sign = sign_result;
             before_num3 = BCD_result[15:12];
             before_num2 = BCD_result[11:8];
             before_num1 = BCD_result[7:4];
             before_num0 = BCD_result[3:0];
         end
         else begin
+            before_sign = sign_input;
             before_num3 = thous;
             before_num2 = huns;
             before_num1 = tens;
             before_num0 = ones;
         end
     end
-    
+    assign final_sign = before_sign;
+    assign led[15] = final_sign ; assign led[14] = final_sign ; assign led[13] = final_sign ;
+    assign led[0] = overflow; assign led[1] = overflow; assign led[2] = overflow;
     assign num3 = before_num3;
     assign num2 = before_num2;
     assign num1 = before_num1;
@@ -86,13 +92,9 @@ module uartSystem(
     reg [3:0] binary_in;
     wire [7:0] data_out;
     wire sent, received, baud, success;
-    wire [13:0] binary_A; wire [13:0] binary_B; wire [13:0] binary_result;
-    reg [13:0] binary_A_2; reg [13:0] binary_B_2;
-    
-    //always @(posedge clk) begin
-    //    binary_A_2 = binary_A;
-    //    binary_B_2 = binary_B;
-    //end
+    wire [13:0] binary_A; wire [13:0] binary_B; wire [26:0] binary_result;
+    wire sign_A; wire sign_B;
+
     
     baudrate_gen baudrate_gen(clk, baud);
     transmitter transmitter(baud, data_in, ena, sent, RsTx);
@@ -100,11 +102,11 @@ module uartSystem(
     // 1.
     receiver receiver(baud, RsRx, success, received, data_out);
     // 2.
-    input_state input_state(thous, huns, tens, ones, binary_A, binary_B, state, binary_in, success, reset);
+    input_state input_state(sign_input, thous, huns, tens, ones, sign_A, binary_A, sign_B , binary_B, state, binary_in, success, BTNU);
     // 3.
-    calculator cal(binary_A, binary_B, binary_in , clk, binary_result);
+    calculator cal(sign_A, binary_A, sign_B, binary_B, binary_in , clk, BTNU , binary_result, sign_result, overflow);
     // 4.
-    Binary2BCD BCD(binary_result, BCD_result);
+    Binary2BCD BCD(binary_result[13:0], BCD_result);
 
 
 

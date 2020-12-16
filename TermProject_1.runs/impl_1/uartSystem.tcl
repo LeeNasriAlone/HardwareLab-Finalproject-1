@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "D:/Vivado/Workspace/TermProject_1/TermProject_1.runs/impl_1/uartSystem.tcl"
+  variable script "D:/Vivado/Workspace/TermProject_2/TermProject_1.runs/impl_1/uartSystem.tcl"
   variable category "vivado_impl"
 }
 
@@ -123,8 +123,9 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 1
+  set_param xicom.use_bs_reader 1
   open_checkpoint uartSystem_routed.dcp
-  set_property webtalk.parent_dir D:/Vivado/Workspace/TermProject_1/TermProject_1.cache/wt [current_project]
+  set_property webtalk.parent_dir D:/Vivado/Workspace/TermProject_2/TermProject_1.cache/wt [current_project]
 set_property TOP uartSystem [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

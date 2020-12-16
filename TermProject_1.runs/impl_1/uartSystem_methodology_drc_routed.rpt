@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Dec 15 13:26:06 2020
+| Date         : Wed Dec 16 00:01:44 2020
 | Host         : Lee-Dell running 64-bit major release  (build 9200)
 | Command      : report_methodology -file uartSystem_methodology_drc_routed.rpt -pb uartSystem_methodology_drc_routed.pb -rpx uartSystem_methodology_drc_routed.rpx
 | Design       : uartSystem
@@ -23,12 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 128
+             Violations found: 151
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 121        |
-| TIMING-18 | Warning          | Missing input or output delay | 7          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 124        |
+| DPIR-1    | Warning          | Asynchronous driver check     | 2          |
+| LUTAR-1   | Warning          | LUT drives async reset alert  | 1          |
+| TIMING-18 | Warning          | Missing input or output delay | 24         |
 +-----------+------------------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -310,365 +312,484 @@ Related violations: <none>
 
 TIMING-17#56 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/state_reg[0]/C is not reached by a timing clock
+The clock pin input_state/sign_A_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/state_reg[1]/C is not reached by a timing clock
+The clock pin input_state/sign_B_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/state_reg[2]/C is not reached by a timing clock
+The clock pin input_state/sign_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#59 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/state_reg[3]/C is not reached by a timing clock
+The clock pin input_state/state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#60 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_A_reg[0]/C is not reached by a timing clock
+The clock pin input_state/state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#61 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_A_reg[1]/C is not reached by a timing clock
+The clock pin input_state/state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#62 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_A_reg[2]/C is not reached by a timing clock
+The clock pin input_state/state_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#63 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_A_reg[3]/C is not reached by a timing clock
+The clock pin input_state/tens_A_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#64 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_B_reg[0]/C is not reached by a timing clock
+The clock pin input_state/tens_A_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#65 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_B_reg[1]/C is not reached by a timing clock
+The clock pin input_state/tens_A_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#66 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_B_reg[2]/C is not reached by a timing clock
+The clock pin input_state/tens_A_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#67 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_B_reg[3]/C is not reached by a timing clock
+The clock pin input_state/tens_B_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#68 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_reg[0]/C is not reached by a timing clock
+The clock pin input_state/tens_B_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#69 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_reg[1]/C is not reached by a timing clock
+The clock pin input_state/tens_B_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#70 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_reg[2]/C is not reached by a timing clock
+The clock pin input_state/tens_B_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#71 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/tens_reg[3]/C is not reached by a timing clock
+The clock pin input_state/tens_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#72 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_A_reg[0]/C is not reached by a timing clock
+The clock pin input_state/tens_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#73 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_A_reg[1]/C is not reached by a timing clock
+The clock pin input_state/tens_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#74 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_A_reg[2]/C is not reached by a timing clock
+The clock pin input_state/tens_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#75 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_A_reg[3]/C is not reached by a timing clock
+The clock pin input_state/thous_A_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#76 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_B_reg[0]/C is not reached by a timing clock
+The clock pin input_state/thous_A_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#77 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_B_reg[1]/C is not reached by a timing clock
+The clock pin input_state/thous_A_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#78 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_B_reg[2]/C is not reached by a timing clock
+The clock pin input_state/thous_A_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#79 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_B_reg[3]/C is not reached by a timing clock
+The clock pin input_state/thous_B_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#80 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_reg[0]/C is not reached by a timing clock
+The clock pin input_state/thous_B_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#81 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_reg[1]/C is not reached by a timing clock
+The clock pin input_state/thous_B_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#82 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_reg[2]/C is not reached by a timing clock
+The clock pin input_state/thous_B_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#83 Critical Warning
 Non-clocked sequential cell  
-The clock pin input_state/thous_reg[3]/C is not reached by a timing clock
+The clock pin input_state/thous_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#84 Critical Warning
 Non-clocked sequential cell  
-The clock pin last_rec_reg/C is not reached by a timing clock
+The clock pin input_state/thous_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#85 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[0]/C is not reached by a timing clock
+The clock pin input_state/thous_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#86 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[1]/C is not reached by a timing clock
+The clock pin input_state/thous_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#87 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[2]/C is not reached by a timing clock
+The clock pin last_rec_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#88 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[3]/C is not reached by a timing clock
+The clock pin receiver/count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#89 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[4]/C is not reached by a timing clock
+The clock pin receiver/count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#90 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[5]/C is not reached by a timing clock
+The clock pin receiver/count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#91 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[6]/C is not reached by a timing clock
+The clock pin receiver/count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#92 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/count_reg[7]/C is not reached by a timing clock
+The clock pin receiver/count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#93 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[0]/C is not reached by a timing clock
+The clock pin receiver/count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#94 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[1]/C is not reached by a timing clock
+The clock pin receiver/count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#95 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[2]/C is not reached by a timing clock
+The clock pin receiver/count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#96 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[3]/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#97 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[4]/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#98 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[5]/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#99 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[6]/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#100 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/data_out_reg[7]/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#101 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/last_bit_reg/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#102 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/received_reg/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#103 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/receiving_reg/C is not reached by a timing clock
+The clock pin receiver/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#104 Critical Warning
 Non-clocked sequential cell  
-The clock pin receiver/success_reg/C is not reached by a timing clock
+The clock pin receiver/last_bit_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#105 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/bit_out_reg/C is not reached by a timing clock
+The clock pin receiver/received_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#106 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[0]/C is not reached by a timing clock
+The clock pin receiver/receiving_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#107 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[1]/C is not reached by a timing clock
+The clock pin receiver/success_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#108 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[2]/C is not reached by a timing clock
+The clock pin transmitter/bit_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#109 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[3]/C is not reached by a timing clock
+The clock pin transmitter/count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#110 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[4]/C is not reached by a timing clock
+The clock pin transmitter/count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#111 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[5]/C is not reached by a timing clock
+The clock pin transmitter/count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#112 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[6]/C is not reached by a timing clock
+The clock pin transmitter/count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#113 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/count_reg[7]/C is not reached by a timing clock
+The clock pin transmitter/count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#114 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/last_ena_reg/C is not reached by a timing clock
+The clock pin transmitter/count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#115 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/sending_reg/C is not reached by a timing clock
+The clock pin transmitter/count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#116 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/temp_reg[0]/C is not reached by a timing clock
+The clock pin transmitter/count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#117 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/temp_reg[1]/C is not reached by a timing clock
+The clock pin transmitter/last_ena_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#118 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/temp_reg[2]/C is not reached by a timing clock
+The clock pin transmitter/sending_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#119 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/temp_reg[3]/C is not reached by a timing clock
+The clock pin transmitter/temp_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#120 Critical Warning
 Non-clocked sequential cell  
-The clock pin transmitter/temp_reg[4]/C is not reached by a timing clock
+The clock pin transmitter/temp_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#121 Critical Warning
 Non-clocked sequential cell  
+The clock pin transmitter/temp_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#122 Critical Warning
+Non-clocked sequential cell  
+The clock pin transmitter/temp_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#123 Critical Warning
+Non-clocked sequential cell  
+The clock pin transmitter/temp_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#124 Critical Warning
+Non-clocked sequential cell  
 The clock pin transmitter/temp_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+DPIR-1#1 Warning
+Asynchronous driver check  
+DSP cal/result0 input pin cal/result0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#2 Warning
+Asynchronous driver check  
+DSP cal/result0 input pin cal/result0/B[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell btnu/state[3]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) cal/result_reg[0]/CLR, cal/result_reg[10]/CLR, cal/result_reg[11]/CLR,
+cal/result_reg[12]/CLR, cal/result_reg[13]/CLR, cal/result_reg[14]/CLR,
+cal/result_reg[15]/CLR, cal/result_reg[16]/CLR, cal/result_reg[17]/CLR,
+cal/result_reg[18]/CLR, cal/result_reg[19]/CLR, cal/result_reg[1]/CLR,
+cal/result_reg[20]/CLR, cal/result_reg[21]/CLR, cal/result_reg[22]/CLR (the first 15 of 82 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An output delay is missing on seg[0] relative to clock(s) sys_clk_pin
+An input delay is missing on btnU relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An output delay is missing on seg[1] relative to clock(s) sys_clk_pin
+An output delay is missing on led[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on seg[2] relative to clock(s) sys_clk_pin
+An output delay is missing on led[10] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on seg[3] relative to clock(s) sys_clk_pin
+An output delay is missing on led[11] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on seg[4] relative to clock(s) sys_clk_pin
+An output delay is missing on led[12] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on seg[5] relative to clock(s) sys_clk_pin
+An output delay is missing on led[13] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on led[14] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on led[15] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on led[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on led[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on led[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An output delay is missing on led[4] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An output delay is missing on led[5] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An output delay is missing on led[6] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on led[7] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on led[8] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An output delay is missing on led[9] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An output delay is missing on seg[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An output delay is missing on seg[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An output delay is missing on seg[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An output delay is missing on seg[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An output delay is missing on seg[4] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#23 Warning
+Missing input or output delay  
+An output delay is missing on seg[5] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#24 Warning
 Missing input or output delay  
 An output delay is missing on seg[6] relative to clock(s) sys_clk_pin
 Related violations: <none>

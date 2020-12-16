@@ -2,11 +2,11 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Dec 15 13:28:06 2020
-# Process ID: 3768
-# Current directory: D:/Vivado/Workspace/TermProject_1/TermProject_1.runs/impl_1
+# Start of session at: Wed Dec 16 00:25:20 2020
+# Process ID: 15848
+# Current directory: D:/Vivado/Workspace/TermProject_2/TermProject_1.runs/impl_1
 # Command line: vivado.exe -log uartSystem.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source uartSystem.tcl -notrace
-# Log file: D:/Vivado/Workspace/TermProject_1/TermProject_1.runs/impl_1/uartSystem.vdi
-# Journal file: D:/Vivado/Workspace/TermProject_1/TermProject_1.runs/impl_1\vivado.jou
+# Log file: D:/Vivado/Workspace/TermProject_2/TermProject_1.runs/impl_1/uartSystem.vdi
+# Journal file: D:/Vivado/Workspace/TermProject_2/TermProject_1.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source uartSystem.tcl -notrace
